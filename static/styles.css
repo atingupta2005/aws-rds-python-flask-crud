@@ -78,16 +78,34 @@ a:hover, .btn:hover {
     margin: 0 5px;
 }
 
-.action-buttons button:hover,
+/* Icon Button Styling for Edit and Delete */
+.action-buttons a {
+    background-color: #28a745; /* Green for Edit */
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
 .action-buttons a:hover {
-    background-color: #f1f1f1; /* Add subtle hover effect */
+    background-color: #218838;
+}
+
+.action-buttons button {
+    background-color: #dc3545; /* Red for Delete */
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.action-buttons button:hover {
+    background-color: #c82333;
 }
 
 /* Icon Styling */
 .icon {
-    width: 20px; /* Set a fixed size for icons */
-    height: 20px;
-    margin: 0; /* Remove margin */
+    width: 16px; /* Set a fixed size for icons */
+    height: 16px;
+    margin-right: 5px;
 }
 
 /* Specific Styling for Add/Edit Pages */
