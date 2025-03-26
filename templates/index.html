@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users List</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Include FontAwesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <h1>Users</h1>
@@ -22,10 +24,16 @@
             <td>{{ user[0] }}</td>
             <td>{{ user[1] }}</td>
             <td>{{ user[2] }}</td>
-            <td>
-                <a href="/edit/{{ user[0] }}" class="btn">Edit</a>
+            <td class="action-buttons">
+                <!-- Edit Button with icon -->
+                <a href="/edit/{{ user[0] }}" class="btn">
+                    <i class="fas fa-edit icon"></i>Edit
+                </a>
+                <!-- Delete Button with icon -->
                 <form action="/delete/{{ user[0] }}" method="POST" style="display:inline;">
-                    <button type="submit" class="btn" onclick="return confirm('Are you sure?')">Delete</button>
+                    <button type="submit" class="btn" onclick="return confirm('Are you sure?')">
+                        <i class="fas fa-trash-alt icon"></i>Delete
+                    </button>
                 </form>
             </td>
         </tr>

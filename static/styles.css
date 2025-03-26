@@ -11,6 +11,91 @@ h1 {
     margin-top: 20px;
 }
 
+table {
+    width: 100%;  /* Ensure the table uses the full width of the page */
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+td {
+    text-align: center;
+}
+
+a, .btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 5px;
+    display: inline-block;
+    font-size: 16px;
+}
+
+a:hover, .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Home Page Button Styling */
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 5px;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Align buttons in Action column properly */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.action-buttons button {
+    background-color: #dc3545; /* Red for Delete */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.action-buttons a {
+    background-color: #28a745; /* Green for Edit */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 0 5px;
+    font-size: 16px;
+}
+
+/* Icon Styling */
+.icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+/* Make the form take 100% width */
 form {
     width: 50%;
     margin: 20px auto;
@@ -45,62 +130,4 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #0056b3;
-}
-
-h2 {
-    text-align: center;
-}
-
-/* Button Styles for Add/Edit Pages */
-.btn {
-    background-color: #007bff;
-    color: white;
-    padding: 8px 16px;
-    text-decoration: none;
-    border-radius: 4px;
-    margin: 10px;
-    display: inline-block;
-    font-size: 16px;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-}
-
-.form-buttons {
-    display: flex;
-    justify-content: space-between;
-}
-
-/* Specific Styling for Add and Edit Pages */
-.add-edit-page {
-    width: 50%;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.add-edit-page input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.add-edit-page button {
-    background-color: #28a745;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 4px;
-    width: 100%;
-}
-
-.add-edit-page button:hover {
-    background-color: #218838;
 }
