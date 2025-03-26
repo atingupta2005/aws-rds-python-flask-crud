@@ -3,11 +3,12 @@ import mysql.connector
 from dotenv import load_dotenv
 import os
 
+# Load environment variables from .env file
 load_dotenv()
 
 app = Flask(__name__)
 
-# MySQL database connection settings
+# MySQL database connection settings loaded from environment variables
 db_config = {
     'host': os.getenv('DB_HOST'),
     'database': os.getenv('DB_NAME'),
@@ -20,20 +21,6 @@ def get_db_connection():
     conn = mysql.connector.connect(**db_config)
     return conn
 
-# Create record
-@app.route('/add', methods=['POST'])
-def add_record():
-    if request.method == 'POST':
-        name = request.form['name']
-        email = request.form['email']
-        conn = get_db_connection()
-        cursor = conn.cursor()
-        cursor.execute("INSERT INTO users (name, email) VALUES (%s, %s)", (name, email))
-        conn.commit()
-        cursor.close()
-        conn.close()
-        return redirect(url_for('index'))
-
 # Read and List records
 @app.route('/')
 def index():
@@ -45,7 +32,22 @@ def index():
     conn.close()
     return render_template('index.html', users=users)
 
-# Edit record
+# Create record - GET and POST methods
+@app.route('/add', methods=['GET', 'POST'])
+def add_record():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO users (name, email) VALUES (%s, %s)", (name, email))
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return redirect(url_for('index'))
+    return render_template('add.html')
+
+# Edit record - GET and POST methods
 @app.route('/edit/<int:id>', methods=['GET', 'POST'])
 def edit(id):
     conn = get_db_connection()
@@ -67,7 +69,7 @@ def edit(id):
     return render_template('edit.html', user=user)
 
 # Delete record
-@app.route('/delete/<int:id>', methods=['GET', 'POST'])
+@app.route('/delete/<int:id>', methods=['POST'])
 def delete(id):
     conn = get_db_connection()
     cursor = conn.cursor()
