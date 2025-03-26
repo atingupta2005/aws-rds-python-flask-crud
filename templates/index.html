@@ -27,12 +27,12 @@
             <td class="action-buttons">
                 <!-- Edit Button with icon -->
                 <a href="/edit/{{ user[0] }}" class="btn">
-                    <i class="fas fa-edit icon"></i>Edit
+                    <i class="fas fa-edit icon"></i>
                 </a>
-                <!-- Delete Button with icon -->
+                <!-- Delete Button with icon (only icon, no text) -->
                 <form action="/delete/{{ user[0] }}" method="POST" style="display:inline;">
                     <button type="submit" class="btn" onclick="return confirm('Are you sure?')">
-                        <i class="fas fa-trash-alt icon"></i>Delete
+                        <i class="fas fa-trash-alt icon"></i>
                     </button>
                 </form>
             </td>
